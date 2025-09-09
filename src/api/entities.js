@@ -1,12 +1,13 @@
-import { Entity } from '@/lib/entity';
+import { Entity } from './entity';
 import api from '@/lib/api';
 
 class BaseEntityClass extends Entity {
   static client = api;
+  static entity = '';
 }
 
 class OrganizationClass extends BaseEntityClass {
-  static endpoint = 'organizations';
+  static entity = 'organizations';
 }
 
 class CameraClass extends BaseEntityClass {
@@ -167,16 +168,6 @@ export const TemplateSuccessStory = TemplateSuccessStoryClass;
 export const EmployeeRole = EmployeeRoleClass;
 export const EmployeeAssignment = EmployeeAssignmentClass;
 export const TeamImportSession = TeamImportSessionClass;
-
-import { Entity } from './entity';
-
-class CameraClass extends Entity {
-    static entity = 'camera';
-}
-
-class StreamCallbackLogClass extends Entity {
-    static entity = 'streamCallbackLog';
-}
 
 class AgentAlertChannelClass extends Entity {
     static entity = 'agentAlertChannel';
