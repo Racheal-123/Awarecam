@@ -4,6 +4,20 @@
 
 AwareCam is a comprehensive video intelligence platform that provides real-time camera monitoring, AI-powered event detection, workflow management, and organizational oversight capabilities. The platform combines modern web technologies with advanced streaming infrastructure to deliver a complete video surveillance and management solution.
 
+## Latest updates (local dev)
+
+- Frontend: Vite dev server running on http://localhost:5175 (auto-fallback if 5173/5174 are in use)
+- Backend: Flask configured to run on http://localhost:3000 (see `api/app.py`)
+- Frontend API base URL: `.env` contains `VITE_API_URL=http://localhost:3000`
+- User entity: Added missing `me()`, `login()`, `logout()`, `getCurrentUser()` in `src/api/entities.js`
+- Backend requirements installed in a Python 3.11 virtualenv under `api/.venv`
+- Pending: Valid `SUPABASE_URL` and `SUPABASE_KEY` required for backend to fully start
+
+Quick restart commands
+- Kill dev servers (PowerShell): `Get-Process node -ErrorAction SilentlyContinue | Stop-Process -Force`
+- Start frontend (project root): `npm run dev`
+- Start backend (from `api/`): `./.venv/Scripts/Activate.ps1; python app.py`
+
 ## Architecture
 
 ### Frontend (React + Vite)
